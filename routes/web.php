@@ -15,8 +15,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Route::group(['middleware' => 'costumer'], function() {
-    Route::get('/cliente/password/reset','Costumer\ForgotPasswordController@showLinkRequestForm')->name('password.request');
-    Route::post('/cliente/password/email','Costumer\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
+    Route::get('/cliente/password/reset','Costumer\ForgotPasswordController@showLinkRequestForm')->name('cliente.password.request');
+    Route::post('/cliente/password/email','Costumer\ForgotPasswordController@sendResetLinkEmail')->name('cliente.password.email');
     Route::get("/cliente/entrar", 'Costumer\LoginController@showLoginForm')->name('logar');
     Route::post("/cliente/entrar", 'Costumer\LoginController@logar');
     Route::get('/cliente/sair', 'Costumer\LoginController@logout');

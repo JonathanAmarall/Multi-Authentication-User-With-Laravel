@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Costumer;
 
-use App\Costumer;
-use Illuminate\Http\Request;
+use Costumer;
+use Password;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
 
@@ -19,7 +19,7 @@ class ForgotPasswordController extends Controller
     {
         return view('costumer.password.email', [
             'title' => 'Recuperação de Senha',
-            'passwordEmailRoute' => 'password.email'
+            'passwordEmailRoute' => 'cliente.password.email'
         ]);
     }
     public function broker(){

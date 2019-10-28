@@ -8,8 +8,8 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\Notifications\AdminEmailVerificationNotification;
 use App\Notifications\AdminResetPasswordNotification as Notification;
-use Illuminate\Contracts\Auth\CanResetPassword;
-class Costumer extends Authenticatable
+
+class Costumer extends Authenticatable implements MustVerifyEmail
 {
     use Notifiable;
     protected $fillable = [
