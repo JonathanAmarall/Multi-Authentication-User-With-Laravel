@@ -21,7 +21,11 @@ Route::group(['middleware' => 'costumer'], function() {
     Route::post("/cliente/entrar", 'Costumer\LoginController@logar');
     Route::get('/cliente/sair', 'Costumer\LoginController@logout');
 
-        Route::get('/cliente/dashboard', 'Costumer\HomeController@index')->name('cliente.dashboard');
+    //Reset Password Routes
+    Route::get('/cliente/password/reset/{token}','Costumer\ResetPasswordController@showResetForm')->name('cliente.password.reset');
+    Route::post('/cliente/password/reset','Costumer\ResetPasswordController@reset')->name('cliente.password.update');
+    
+    Route::get('/cliente/dashboard', 'Costumer\HomeController@index')->name('cliente.dashboard');
 });
 
 
